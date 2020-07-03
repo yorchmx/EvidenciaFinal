@@ -10,9 +10,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css" />
-        <title>JSP Page</title>
+        <title>IMC</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Indice de Masa Corporal</h1>
     </body>
 </html>
