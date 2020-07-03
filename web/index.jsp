@@ -4,6 +4,7 @@
     Author     : Memo
 --%>
 
+<%@page import="Controlador.Registro" %>
 <%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
     </head>
     <body>
         
-        <h1>Inicie sesión</h1>
+        <h1>Inicia sesion para calcular tu IMC</h1>
         <h2> <% String us = ""; String ps ""; String nn = "";
             HttpSession sesion = request.getSession(true);
             Enumeration e = sesion.getAttributeNames();
