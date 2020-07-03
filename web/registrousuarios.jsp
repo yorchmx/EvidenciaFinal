@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 03-jul-2020, 1:56:59
+    Document   : registrousuarios
+    Created on : 03-jul-2020, 15:01:13
     Author     : Memo
 --%>
 
@@ -9,7 +9,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/style.css" />
         <title>JSP Page</title>
     </head>
     <body>
