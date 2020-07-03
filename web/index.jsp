@@ -4,6 +4,7 @@
     Author     : Memo
 --%>
 
+<%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,19 @@
         <title>IMC</title>
     </head>
     <body>
-        <h1>Indice de Masa Corporal</h1>
+        
+        <h1>Inicie sesión</h1>
+        <h2> <% String us = ""; String ps ""; String nn = "";
+            HttpSession sesion = request.getSession(true);
+            Enumeration e = sesion.getAttributeNames();
+            if (e.hasMoreElements() && sesion.getAttribute("usuario") !=null && sesion.getAttribute(usuario) != nn) {
+                ps = "";
+                nn = sesion.getAttribute("usuario").toString();
+                out.print("El usuario '" + sesion.getAttribute("user") != null && sesion2.getAttribute("user") !=us) {
+                
+            }
+            }
+            
+        </h2>
     </body>
 </html>
