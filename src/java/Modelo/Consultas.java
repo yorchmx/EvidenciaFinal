@@ -55,7 +55,7 @@ public class Consultas extends Conexion{
             System.err.println("ERROR "+ e);
         }finally{
             try {
-                if(getConexion() !=null)getConexion().close();
+                if(getConexion() != null)getConexion().close();
                 if(ps != null) ps.close();
                 if(rs != null) rs.close();
             } catch (SQLException e) {
@@ -84,7 +84,7 @@ public class Consultas extends Conexion{
             System.err.println("ERROR "+ e);
         }finally{
                 try {
-                    if(getConexion() !=null) getConexion().close();
+                    if(getConexion() != null) getConexion().close();
                     if(pss !=null) pss.close();
                 } catch (SQLException ex) {
                     System.err.println("ERROR "+ ex);
@@ -111,7 +111,7 @@ public class Consultas extends Conexion{
                System.err.println("ERROR "+ e);
             }finally{
                 try {
-                    if(getConexion() !=null) getConexion().close();
+                    if(getConexion() != null) getConexion().close();
                     if(pss !=null) pss.close();
                 } catch (SQLException e) {
                     System.err.println("ERROR "+ e);
@@ -138,7 +138,7 @@ public class Consultas extends Conexion{
                     System.err.println("ERROR "+ e);
                 }finally{
                     try {
-                        if(getConexion() !=null) getConexion().close();
+                        if(getConexion() != null) getConexion().close();
                         if(pss !=null) pss.close();
                     } catch (SQLException e) {
                         System.err.println("ERROR "+ e);
@@ -165,7 +165,7 @@ public class Consultas extends Conexion{
                         System.err.println("ERROR "+ e);
                     }finally{
                         try {
-                            if(getConexion() !=null) getConexion().close();
+                            if(getConexion() != null) getConexion().close();
                             if(pss !=null) pss.close();
                         } catch (SQLException e) {
                             System.err.println("ERROR "+ e);
