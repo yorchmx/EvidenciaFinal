@@ -8,7 +8,7 @@ public class IMC {
     
     public IMC(String peso, float altura) {
         this.setPeso(Float.parseFloat(peso));
-        this.SetAltura(altura);
+        this.setAltura(altura);
     }
     
     public void calculoIMC(){
@@ -31,7 +31,13 @@ public class IMC {
         this.altura = altura;
     }
     
+    public float getIMC() {
+        return IMC;
+    }
     
-    
+    public void setIMC(float IMC) {
+        this.IMC = IMC;
+    }
+
     
 }
