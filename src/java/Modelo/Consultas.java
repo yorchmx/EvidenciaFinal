@@ -26,7 +26,7 @@ public class Consultas extends Conexion{
             System.err.println("ERROR "+ e);
         }finally{
         try {
-            if(getConexion() !=null)getConexion().close();
+            if(getConexion() != null)getConexion().close();
             if (ps != null) ps.close();
             if (rs !=null) rs.close();
         } catch (SQLException e) {
@@ -149,15 +149,15 @@ public class Consultas extends Conexion{
                 public  float sexoUser(String usuario) {
                     PreparedStatement pss = null;
                     ResultSet rs = null;
-                    float sexo;
+                    int sexo;
                     
                     try {
-                        String query = "select sexo from usuarios where nUsuario = ?;";
+                        String query = "select sexo from usuarios where nUsuario = ?";
                         pss = getConexion().prepareStatement(query);
                         pss.setString(1, usuario);
                         rs = pss.executeQuery();
                         if(rs.next()){
-                            sexo = rs.getFloat("sexo");
+                            sexo = rs.getInt("sexo");
                             return sexo;
                         }
                     }    
