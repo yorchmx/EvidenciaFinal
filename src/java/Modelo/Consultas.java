@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public class Consultas extends Conexion{
 
+    
     public boolean auth(String usuario, String contraseña) {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -25,7 +26,7 @@ public class Consultas extends Conexion{
             System.err.println("ERROR "+ e);
         }finally{
         try {
-            if(getConexion()) !=null)getConexion().close();
+            if(getConexion() !=null)getConexion().close();
             if (ps != null) ps.close();
             if (rs !=null) rs.close();
         } catch (SQLException e) {
@@ -34,9 +35,9 @@ public class Consultas extends Conexion{
         }
         
         
-        return false;
+        return false; 
     }
-    //Checar si el uuario existe en la base de datos
+    //Checar si el usuario existe en la base de datos
     public boolean checkUser(String usuario) {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -57,13 +58,13 @@ public class Consultas extends Conexion{
                 if(getConexion() !=null)getConexion().close();
                 if(ps != null) ps.close();
                 if(rs != null) rs.close();
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 System.err.println("ERROR "+ e);
             }
             }
             return false;
         }
-        
+        //Seleccionar el Nombre Completo
         public String NombreCompleto(String usuario){
         PreparedStatement pss = null;
         ResultSet rs = null;
@@ -79,7 +80,7 @@ public class Consultas extends Conexion{
                 return idUs;
             }    
         }    
-        catch (Exception e) {
+        catch (SQLException e) {
             System.err.println("ERROR "+ e);
         }finally{
                 try {
@@ -98,22 +99,87 @@ public class Consultas extends Conexion{
             
             try {
                 String query = "select estatura from usuarios where nUsuario = ?;";
-                pss = getConexion().prepareStament(query);
+                pss = getConexion().prepareStatement(query);
                 pss.setString(1, usuario);
-                rs = pass.executeQuery();
+                rs = pss.executeQuery();
             if(rs.next()){
                 altura = rs.getFloat("estatura");
                 return altura;
                 }
             }
-           catch (Exception e) {
+           catch (SQLException e) {
                System.err.println("ERROR "+ e);
             }finally{
                 try {
                     if(getConexion() !=null) getConexion().close();
-                } catch (Exception e) {
+                    if(pss !=null) pss.close();
+                } catch (SQLException e) {
+                    System.err.println("ERROR "+ e);
                 }
-            }
-        }
-                 
-}
+                }
+                    return null;
+                }
+            public float edadUser(String usuario) {
+                PreparedStatement pss = null;
+                ResultSet rs = null;
+                float edad;
+                
+                try {
+                    String query = "slect edad from usuarios where nUsuario = ?;";
+                    pss = getConexion().prepareStatement(query);
+                    pss.setString(1, usuario);
+                    rs = pss.executeQuery();
+                    if(rs.next()){
+                        edad = rs.getFloat("edad");
+                        return edad;
+                    }
+                }
+                catch (SQLException e) {
+                    System.err.println("ERROR "+ e);
+                }finally{
+                    try {
+                        if(getConexion() !=null) getConexion().close();
+                        if(pss !=null) pss.close();
+                    } catch (SQLException e) {
+                        System.err.println("ERROR "+ e);
+                    }
+                    }
+                        return null;
+                    }
+                public  float sexoUser(String usuario) {
+                    PreparedStatement pss = null;
+                    ResultSet rs = null;
+                    float sexo;
+                    
+                    try {
+                        String query = "select sexo from usuarios where nUsuario = ?;";
+                        pss = getConexion().prepareStatement(query);
+                        pss.setString(1, usuario);
+                        rs = pss.executeQuery();
+                        if(rs.next()){
+                            sexo = rs.getFloat("sexo");
+                            return sexo;
+                        }
+                    }    
+                    catch (SQLException e) {
+                        System.err.println("ERROR "+ e);
+                    }finally{
+                        try {
+                            if(getConexion() !=null) getConexion().close();
+                            if(pss !=null) pss.close();
+                        } catch (SQLException e) {
+                            System.err.println("ERROR "+ e);
+                        }
+                        }
+                            return null;
+                        }
+
+    private Object getConexion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private PreparedStatement setString(int i, String usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}        
