@@ -10,5 +10,9 @@ package Modelo;
  * @author Memo
  */
 public class Consultas {
+
+    public boolean auth(String Usuario, String Contraseña) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

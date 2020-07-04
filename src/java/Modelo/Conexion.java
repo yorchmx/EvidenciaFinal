@@ -9,6 +9,6 @@ package Modelo;
  *
  * @author Memo
  */
-public class Conexio {
+public class Conexion {
     
 }
