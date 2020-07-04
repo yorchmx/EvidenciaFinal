@@ -86,6 +86,10 @@ public class Login extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    private void guardaUser(String Usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
 }
